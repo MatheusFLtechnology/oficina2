@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>pagina de saidas</h1>
+    <form action="{% url 'adicionar_produto_sessao' %}" method="post">
+    {% csrf_token %}
+   
+    <p>Selecione o Produto:
+        <select name="peca">
+            {% for peca in todas_pecas %}
+            <option value="{{peca.id}}">{{peca.nome}}</option>
+            {% endfor %}
+        </select> 
+    </p>
+    <p>Digite a quantidade: <input type="number" name="qtd" /></p>
+    <p><input type="submit" value="Adicionar" /></p>
+    </form>
+    
+    <h2>Lista de Itens da Vendas</h2>
+    {% for k,v in request.session.produtos.items %}
+       <p>Produto: {{ v.0 }} - Quantidade: {{ v.1 }}</p>
+    {% empty %}
+    <p>Nenhum item adicionado</p>
+    {% endfor %}
+
+
+    <form action="{% url 'finalizar_venda' %}" method="post">
+        <p>CPF: <input type="text" name='cpf' /></p>
+        {% csrf_token %}
+        <p><input type="submit" value="Finalizar Venda"/></p>
+    </form>
+
+
+
+    <form action="{% url 'zerar_produtos' %}" method="post">
+        {% csrf_token %}
+        <p><input type="submit" value="Zerar"/></p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style type="text/css">
+        * {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background: linear-gradient(45deg, #ffffff , #ffffff );
+			font-famil: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
+            background-image: url('https://www.mountainbikes.pt/uploads/s1/10/21/53/75/cuidados-a-ter-ao-mudar-o-cabo-do-desviador-traseiro.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100%;
+            width: 100%;
+		}
+
+		.center {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.main {
+			width: 100%;
+			height: 100vh;
+		}
+
+		.box {
+			width: 400px;
+			height: 500px;
+			background: #00000000;
+			color: #ffffff;
+			margin: 0 20px;
+			overflow: hidden;
+			flex-direction: column;
+			position: relative;
+		}
+
+		.box div {
+			margin: 5px 0;
+		}
+
+		.box div input {
+			width: 220px;
+			height: 25px;
+			margin: 5px 0;
+			border: none;
+			border-bottom: 1px solid rgba(0, 0, 0, 0);
+			outline: none;
+		}
+
+		.box button {
+			width: 220px;
+			height: 30px;
+			margin-top: 5px;
+			background: none;
+			border: none;
+			outline: none;
+			background: #b22222;
+			color: white;
+			border-radius: 10px;
+			cursor: pointer;
+		}
+
+		.box h1 {
+			margin: 60px 0 20px 0;
+		}
+
+		.box .icon {
+			position: absolute;
+			top: -20px;
+			left: 0;
+			width: 100%;
+			height: 100px;
+			border-radius: 0 0 50% 50%;
+			background: #b2222200;
+			box-shadow: 0px 0px 20px rgb(144, 144, 144);
+			align-items: flex-end;
+		}
+
+		.box .icon i {
+			color: white;
+			margin-bottom: 10px;
+		}
+
+        
+
+
+        footer{
+        background-color: #363636;
+        text-align: center;
+
+         }
+
+         
+
+    </style>
+    </style>
+</head>
+
+<body>
+
+    <ul class="nav fixed-top">
+      
+       
+      </ul>
+
+
+    <div class="row mt-4">
+        <div class="col-md-6 ">
+            <!-- <div class="p-3"> 
+            <p><a href="{% url 'registro' %}">Cadastro</a></p>
+          </div>-->
+        </div>
+
+    </div>
+    <div class="row mt-5">
+        <form method="post">
+            {% csrf_token %}
+            <div class="main center">
+                <div class="box center">
+                    <div class="icon center">
+                        <i class="far fa-user fa-2x"></i>
+                    </div>
+                    <h1>Geovane Ciclo Bike</h1>
+                    <div>
+                        <p>Usuário</p>
+                        {{ form.username }}
+                    </div>
+                    <div>
+                        <p>Digite a Senha</p>
+                        {{ form.password }}
+                    </div>
+                    <button class="btn" value="Autenticar">LOGIN</button>
+                </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <footer class="text-center text-white fixed" style="background-color: #21081a;">
+        <!-- Grid container -->
+        <div class="container p-4"></div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+           
+            <a class="text-white" href="https://mdbootstrap.com/">Geovane Ciclo Bike</a><br>
+            <a class="text-white" href="https://mdbootstrap.com/">Canguretama/RN</a><br>
+            <i class="bi bi-telephone">0800-994993</i>
+            
+        </div>
+       
+            
+        
+        <!-- Copyright -->
+    </footer>
+</body>
+
+</html>
