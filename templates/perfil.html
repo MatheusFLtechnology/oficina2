@@ -9,14 +9,102 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
- 
+
   <style type="css/text">
-    a:link{
+
+    * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .box {
+            width: 400px;
+            height: 500px;
+            background: #00000000;
+            color: #ffffff;
+            margin: 0 20px;
+            overflow: hidden;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .box div {
+            margin: 5px 0;
+        }
+
+        .box div input {
+            width: 220px;
+            height: 25px;
+            margin: 5px 0;
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0);
+            outline: none;
+        }
+
+        .box button {
+            width: 220px;
+            height: 30px;
+            margin-top: 5px;
+            background: none;
+            border: none;
+            outline: none;
+            background: #b22222;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .box h1 {
+            margin: 60px 0 20px 0;
+        }
+
+        .box .icon {
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            border-radius: 0 0 50% 50%;
+            background: #b2222200;
+            box-shadow: 0px 0px 20px rgb(144, 144, 144);
+            align-items: flex-end;
+        }
+
+        .box .icon i {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        body {
+            background: linear-gradient(45deg, #ffffff, #ffffff);
+            font-famil: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
+            background-image: url('https://img.freepik.com/fotos-premium/fundo-de-pecas-sobressalentes-de-bicicleta_263357-2544.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100%;
+            width: 100%;
+        }
+        a{
         color: white;
     }
+    a:hover {
+      color: white; 
+    }
 
-     a:hover {color: white; }
-     
      .menu{
        color: black;
      }
@@ -52,57 +140,70 @@
       </button>
     </div>
     <div class="menu">
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header">
-        <img src="" alt="">
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="button" class="btn btn-dark"><a  href=""></a>INICIO</button>
-      </div><br>
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="button" class="btn btn-dark"><a href="{% url 'cadastro' %}">CADASTRO PEÇAS</a></button>
-      </div><br>
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="button" class="btn btn-dark"><a  href="{% url 'lista_pecas'%}">PEÇAS</a></button>
-      </div><br>
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="button" class="btn btn-dark"><a  href="{% url 'lista_tipos'%}">TIPOS DE PEÇAS</a></button>
-      </div><br>
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="button" class="btn btn-dark"><a  href="{% url 'lista_tipos'%}">TIPOS DE PEÇAS</a></button>
-      </div><br>
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="button" class="btn btn-dark"><a  href="{% url 'entrada'%}">ENTRADAS DE PEÇAS</a></button>
-      </div><br>
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="button" class="btn btn-dark"><a  href="{% url 'saidas'%}">VENDER PEÇAS</a></button>
-      </div><br> 
-    
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <img src="" alt="">
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="button" class="btn btn-dark"><a href=""></a>INICIO</button>
+        </div><br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="button" class="btn btn-dark"><a href="{% url 'cadastro' %}">CADASTRO PEÇAS</a></button>
+        </div><br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="button" class="btn btn-dark"><a href="{% url 'lista_pecas'%}">PEÇAS</a></button>
+        </div><br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="button" class="btn btn-dark"><a href="{% url 'lista_tipos'%}">TIPOS DE PEÇAS</a></button>
+        </div><br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="button" class="btn btn-dark"><a href="{% url 'lista_tipos'%}">TIPOS DE PEÇAS</a></button>
+        </div><br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="button" class="btn btn-dark"><a href="{% url 'entrada'%}">ENTRADAS DE PEÇAS</a></button>
+        </div><br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="button" class="btn btn-dark"><a href="{% url 'saidas'%}">VENDER PEÇAS</a></button>
+        </div><br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="button" class="btn btn-dark"><a href="{% url 'registro'%}">REGISTRAR FUNCIONANARIO</a></button>
+        </div><br>
 
-      <!--<a class="nav-link active" aria-current="page" href="{% url 'perfil'%}">inicio</a>
+
+        <!--<a class="nav-link active" aria-current="page" href="{% url 'perfil'%}">inicio</a>
       <a class="nav-link" href="{% url 'cadastro' %}">cadastrar peças</a>
       <a class="nav-link" href="{% url 'tipos_cadastrar' %}">cadastrar tipos de peças</a>
       <a class="nav-link" href="{% url 'lista_pecas'%}">peças</a>
       <a class="nav-link" href="{% url 'lista_tipos'%}">tipos de peças</a>
       <a class="nav-link disabled">suporte tecnico</a>-->
-      <div class="offcanvas-body">
-      </div>
+        <div class="offcanvas-body">
+        </div>
         <div><button type="button" class="btn btn-danger"><a href="{% url 'logout' %}">Sair</button></a></div>
-      
-  </nav><br>
 
+  </nav><br><br><br><br>
+  <div class="alert alert-success" role="alert">
+    <div class="container-fluid">
+      <div class="text-center">
+        <div class="row mt-5">
+          seja bem vindo colaborador {{ user.username }}<br>
+          E-mail: {{ user.email }}
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5">
     <div class="row mt-5">
       <div class="col-12">
-          <div class="card-body">
-              <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-label="Example with label"
-                      style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">40%</div>
-              </div>
+        <div class="card-body">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 40%;"
+              aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">40%</div>
           </div>
+        </div>
   </main>
 
   <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="1038" height="437"
@@ -110,44 +211,44 @@
   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <table class="table table-success table-striped">
       <tr>
-          <th>perças</th>
-          <th>codigo</th>
-          <th>Estoque</th>
-          <th>Status</th>
+        <th>perças</th>
+        <th>codigo</th>
+        <th>Estoque</th>
+        <th>Status</th>
       </tr>
       <tr>
-          <td>pastilhas de freios</td>
-          <td>00001</td>
-          <td>09</td>
-          <td><a href="#" class="btn btn-success">Estoque<br></a></td>
+        <td>pastilhas de freios</td>
+        <td>00001</td>
+        <td>09</td>
+        <td><a href="#" class="btn btn-success">Estoque<br></a></td>
       </tr>
       <tr>
-          <td>velas de ignição</td>
-          <td>203000</td>
-          <td>50</td>
-          <td><a href="#" class="btn btn-success">Estoque<br></a></td>
+        <td>velas de ignição</td>
+        <td>203000</td>
+        <td>50</td>
+        <td><a href="#" class="btn btn-success">Estoque<br></a></td>
       </tr>
       <tr>
-          <td>corrente</td>
-          <td>12400</td>
-          <td>50</td>
-          <td><a href="#" class="btn btn-success">Estoque<br></a></td>
+        <td>corrente</td>
+        <td>12400</td>
+        <td>50</td>
+        <td><a href="#" class="btn btn-success">Estoque<br></a></td>
       </tr>
       <tr>
-          <td>bateria</td>
-          <td>23030</td>
-          <td>4</td>
-          <td><a href="#" class="btn btn-success">Estoque<br></a></td>
+        <td>bateria</td>
+        <td>23030</td>
+        <td>4</td>
+        <td><a href="#" class="btn btn-success">Estoque<br></a></td>
       </tr>
 
       <tr>
-          <td>Pneus</td>
-          <td>330</td>
-          <td>0</td>
-          <td><a href="#" class="btn btn-danger">Em falta<br></a></td>
+        <td>Pneus</td>
+        <td>330</td>
+        <td>0</td>
+        <td><a href="#" class="btn btn-danger">Em falta<br></a></td>
       </tr>
     </table>
-  </div>
+    </div>
   </main>
 
 
@@ -170,11 +271,11 @@
     <!-- Grid container -->
     <div class="container p-4"></div>
     <!-- Grid container -->
-  
+
     <!-- Copyright -->
     <a class="text-white" href="https://mdbootstrap.com/">Geovane Ciclo Bike</a><br>
-            <a class="text-white" href="https://mdbootstrap.com/">Canguretama/RN</a><br>
-            <i class="bi bi-telephone">0800-994993</i>
+    <a class="text-white" href="https://mdbootstrap.com/">Canguretama/RN</a><br>
+    <i class="bi bi-telephone">0800-994993</i>
     </div>
     <!-- Copyright -->
   </footer>

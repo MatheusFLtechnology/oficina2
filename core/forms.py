@@ -9,7 +9,7 @@ from .models import Usuario,pecas,Tipo_pecas,entrada_pecas
 class UsuarioCreationForm(UserCreationForm):
     class Meta:
        model = Usuario
-       fields= ['username', 'password1','password2','cpf','email','nome','idade']
+       fields= ['username', 'password1','password2','cpf','email','nome','idade','perfil']
 
 class pecasForm(ModelForm):
     class Meta:

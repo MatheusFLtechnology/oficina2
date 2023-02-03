@@ -97,6 +97,13 @@
       height: 100%;
       width: 100%;
     }
+    a{
+        color: white;
+    }
+    a:hover {
+      color: white; 
+    }
+
   </style>
 </head>
 
@@ -120,26 +127,28 @@
         <img src="" alt="">
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <a class="nav-link active" aria-current="page" href="{% url 'perfil' %}">home</a>
-      <a class="nav-link" href="{% url 'cadastro' %}">cadastrar peças</a>
-      <a class="nav-link" href="{% url 'tipos_cadastrar' %}">cadastrar tipos de peças</a>
-      <a class="nav-link disabled">suporte tecnico</a>
-      <div class="offcanvas-body">
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-dark"><a href="{% url 'perfil' %}">PERFIL</a></button>
+      </div><br>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-dark"><a href="{% url 'lista_pecas' %}">PEÇAS</a></button>
+      </div><br>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-dark"><a href="{% url 'cadastro' %}">CADASTRO PEÇAS</a></button>
+      </div><br>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-dark"><a href="{% url 'lista_tipos' %}">TIPOS/PEÇAS</a></button>
+      </div><br>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-dark"><a href="{% url 'tipos_cadastrar' %}">CADASTRO/TIPOS</a></button>
+      </div><br>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-dark"><a href="{% url 'entrada' %}">  ENTRADAS DE PEÇAS</a></button>
+      </div><br>
 
-
-        <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-                  Dropdown button
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item" href="{% url 'cadastro' %}">cadastrar peças</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul><br><br><br><br><br>
-                <p><a href="{% url 'logout' %}">Sair</a></p> 
-    
-              </div>
-            </div>
-          </div>-->
+      <div class="d-grid gap-2 col-6 mx-auto text-center">
+        <div><button type="button" class="btn btn-danger"><a href="{% url 'logout' %}">Sair</button></a></div>
+      </div><br>
   </nav>
 
   <div class="container-fluid">
